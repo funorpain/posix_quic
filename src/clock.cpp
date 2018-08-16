@@ -1,10 +1,10 @@
 #include "clock.h"
-#include "clock_impl.h"
+//#include "clock_impl.h"
 
 namespace posix_quic {
 
 static int ClockInitialize() {
-    std::thread(&FastSteadyClock::ThreadRun).detach();
+//    std::thread(&FastSteadyClock::ThreadRun).detach();
     return 0;
 }
 
@@ -19,7 +19,8 @@ QuicClockImpl& QuicClockImpl::getInstance()
 
 int64_t QuicClockImpl::NowMicroseconds()
 {
-    auto tp = FastSteadyClock::now();
+//    auto tp = FastSteadyClock::now();
+    auto tp = std::chrono::steady_clock::now();
     return std::chrono::duration_cast<std::chrono::microseconds>(tp.time_since_epoch()).count();
 }
 

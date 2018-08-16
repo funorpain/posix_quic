@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 14)
 #   cmake .. -DCMAKE_TOOLCHAIN_FILE="/home/ubuntu/git-third/vcpkg/scripts/buildsystems/vcpkg.cmake"
 
 project(posix_quic)
-set(TARGET ${CMAKE_PROJECT_NAME})
+set(TARGET ${PROJECT_NAME})
 
 # flags
 if (CMAKE_BUILD_TYPE)
